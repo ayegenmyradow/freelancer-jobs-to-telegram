@@ -8,7 +8,8 @@ const { PORT, FREELANCE_API, TELEGRAM_CHAT_ID, TELEGRAM_API } = process.env;
 
 // Configurations
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.raw());
+app.use(express.urlencoded({ extended: true }));
 // Endpoints
 app.get('/', async (req, res) => {
     try {
